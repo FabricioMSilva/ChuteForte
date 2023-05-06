@@ -26,6 +26,7 @@ export default function Home() {
                         <select 
                         name="tipoSorteio"
                         value={tipoSorteio}
+                        className="tipoSorteio"
                         defaultValue={tipoSorteio}
                         onChange={(e)=> setTipoSorteio(e.currentTarget.value)}
                         >
