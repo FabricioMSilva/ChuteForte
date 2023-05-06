@@ -57,7 +57,7 @@ color: white;
 .tipoSorteio{
     width: 215.9px;
     height: 45.2px;
-    font-family: Montserrat;
+   
     font-size: 15px;
 font-weight: 500;
 line-height: 18px;
@@ -102,7 +102,8 @@ border-radius: 6%;
 }
 .divSorteio{
     display: grid;
-  
+    height: 100vh;
+ 
     align-content: center;
     text-justify: distribute;
     grid-template-columns: 200px 200px 200px 200px 200px 200px;
@@ -135,6 +136,7 @@ top: 487px;
   position: inherit;
     height: 60vh;
     width: 60vw;
+    border:red 1px solid;
 }
 .divBtn{
     display: grid;
@@ -144,7 +146,7 @@ top: 487px;
         align-content: center;
 }
 .container {
-
+ 
   width: 50vw;
     height: 20vh;
     position: fixed;

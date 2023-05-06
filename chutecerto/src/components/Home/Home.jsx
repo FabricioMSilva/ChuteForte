@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './style.css';
 import Img from './imagens/Sidebar.svg';
 import Logo from './imagens/Logo.svg';
+
 export default function Home() {
 
     const [bola1, setbola1] = useState();
@@ -22,34 +23,28 @@ export default function Home() {
                 <img className='Img' src={Img} alt="" />
                 
                     <div className="DivSorteio">
-                        <select className="tipoSorteio">
-                    
-                            <option onClick={()=>setTipoSorteio('Mega-sena')}>Mega-sena</option>
-                            <option onClick={()=>setTipoSorteio('Quina')}>Quina</option>
-                            <option onClick={()=>setTipoSorteio('Lotomania')}>Lotomania</option>
-                            <option onClick={()=>setTipoSorteio('Timemania')}>Timemania</option>
-                            <option onClick={()=>setTipoSorteio('Sorte')}>Dia de sorte</option>
+                        <select className="tipoSorteio" name="jogos" id="Jogos" >
+                            <option  selected>Escolha:</option>
+                            <option value={1} onClick={()=>setTipoSorteio('Mega-sena')}>Mega-sena</option>
+                            <option value={2}  onClick={()=>setTipoSorteio('Quina')}>Quina</option>
+                            <option value={3}  onClick={()=>setTipoSorteio('Lotomania')}>Lotomania</option>
+                            <option value={4}  onClick={()=>setTipoSorteio('Timemania')}>Timemania</option>
+                            <option value={5}  onClick={()=>setTipoSorteio('Sorte')}>Dia de sorte</option>
                         </select>
                     </div>
+                    
                 
                 <div className="divLogo"><img src={Logo} alt="" /><p className="titleLogo">{tipoSorteio}</p></div>
             </div>
 
             <div className="div2">
-                <div className="divQtdBolas"><p className="txtQtdBolas">Quantidade de Bolas:</p>
-                    <select className="qtdBolas">
-                        <option>Escolha:</option>
-                        <option onClick={() => setnumeroBolas(6)}>6 Bolas</option>
-                        <option onClick={() => setnumeroBolas(7)}>7 Bolas</option>
-                        <option onClick={() => setnumeroBolas(8)}>8 Bolas</option>
-                        <option onClick={() => setnumeroBolas(9)}>9 Bolas</option>
-                        <option onClick={() => setnumeroBolas(10)}>10 Bolas</option>
-                    </select>
-                </div>
+                
                 <div className="divSorteio">
                     {bola1?.map((item, index) => {
                         if (index < numeroBolas) {
-                            return (<div key={index} className="bola1">{item}</div>)
+                            return (
+                            <div key={index} className="bola1">{item}</div>
+                            )
                         }
                     })}
                 </div>
