@@ -32,7 +32,7 @@ export default function Home() {
                         </select>
                     </div>
                 
-                <div className="divLogo"><img src={Logo} alt="" /><p className="titleLogo">MEGA-SENA</p></div>
+                <div className="divLogo"><img src={Logo} alt="" /><p className="titleLogo">{tipoSorteio}</p></div>
             </div>
 
             <div className="div2">
