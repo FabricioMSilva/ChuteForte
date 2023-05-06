@@ -47,10 +47,10 @@ export default function Home() {
                     </select>
                 </div>
                 <div className="divSorteio">
-                    {bola1?.map((item, index) => {
+                    {bola1?.map((item, index) => {()=>{
                         if (index < numeroBolas) {
                             return (<div key={index} className="bola1">{item}</div>)
-                        }
+                        }}
                     })}
                 </div>
 
