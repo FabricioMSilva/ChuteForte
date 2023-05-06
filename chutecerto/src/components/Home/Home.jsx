@@ -14,30 +14,34 @@ export default function Home() {
         const numerosLot = Array.from({ length: n }, (_, i) => i + 1)
         return numerosLot.sort(() => Math.random() - 0.5)
     }
-    return (
+ return (
 
-        //Mega-sena, Quina, Lotofácil, Lotomania, Timemania e Dia de sorte
+            //Mega-sena, Quina, Lotofácil, Lotomania, Timemania e Dia de sorte
 
-        <div className="geral">
-            <div className='div1'>
-                <img className='Img' src={Img} alt="" />
+           <div className="geral">
+                <div className='div1'>
+                    <img className='Img' src={Img} alt="" />
                 
                     <div className="DivSorteio">
-                        <select className="tipoSorteio" name="jogos" id="Jogos" >
-                            <option  selected>Escolha:</option>
-                            <option value={1} onClick={()=>setTipoSorteio('Mega-sena')}>Mega-sena</option>
-                            <option value={2}  onClick={()=>setTipoSorteio('Quina')}>Quina</option>
-                            <option value={3}  onClick={()=>setTipoSorteio('Lotomania')}>Lotomania</option>
-                            <option value={4}  onClick={()=>setTipoSorteio('Timemania')}>Timemania</option>
-                            <option value={5}  onClick={()=>setTipoSorteio('Sorte')}>Dia de sorte</option>
+                        <select 
+                        name="tipoSorteio"
+                        value={tipoSorteio}
+                        defaultValue={tipoSorteio}
+                        onChange={(e)=> setTipoSorteio(e.currentTarget.value)}
+                        >
+                            <option value='0' >Escolha:</option>
+                            <option value='Mega-sena' >Mega-sena</option>
+                            <option value='Quina' >Quina</option>
+                            <option value='Lotomania' >Lotomania</option>
+                            <option value='Timemania' >Timemania</option>
+                            <option value='Dia de sorte' >Dia de sorte</option>
                         </select>
                     </div>
                     
-                
-                <div className="divLogo"><img src={Logo} alt="" /><p className="titleLogo">{tipoSorteio}</p></div>
-            </div>
+                    <div className="divLogo"><img src={Logo} alt="" /><p className="titleLogo">{tipoSorteio}</p></div>
+                </div>
 
-            <div className="div2">
+                <div className="div2">
                 
                 <div className="divSorteio">
                     {bola1?.map((item, index) => {
