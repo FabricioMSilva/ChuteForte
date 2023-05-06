@@ -10,10 +10,7 @@
 display: flex;
 justify-items: flex-start;
 align-items: flex-start;
-margin: 0;
-padding: 0;
-left: 0;
-width:30%;
+width:60%;
 height: 100vh;
 
 }
@@ -53,15 +50,13 @@ color: white;
     align-items: center;
 }
 .tipoSorteio{
-    width: 215.9px;
-    height: 45.2px;
-   
-    font-size: 15px;
+width: 215.9px;
+height: 45.2px;
+font-size: 15px;
 font-weight: 500;
 line-height: 18px;
 letter-spacing: 0em;
 text-align: left;
-position: absolute;
 border-radius: 6%;
 
  

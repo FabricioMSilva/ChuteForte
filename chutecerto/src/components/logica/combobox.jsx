@@ -1,25 +1,31 @@
+import React from "react";
+import {useState} from 'react'
 
 
 
 
 
-export default ComboBox = () =>{
-    <div className='div1'>
-    <img className='Img' src={Img} alt="" />
-    
-        <div className="DivSorteio">
-            <select  className="tipoSorteio" size name="jogos" id="Jogos" >
-                <option >Escolha:</option>
-                <option  onClick={()=>setTipoSorteio('Mega-sena')}>Mega-sena</option>
-                <option   onClick={()=>setTipoSorteio('Quina')}>Quina</option>
-                <option   onClick={()=>setTipoSorteio('Lotomania')}>Lotomania</option>
-                <option  onClick={()=>setTipoSorteio('Timemania')}>Timemania</option>
-                <option onClick={()=>setTipoSorteio('Sorte')}>Dia de sorte</option>
-            </select>
-        </div>
-        
-    
-   
-</div>
+export default function ComboBox() {
 
+const[tipoSorteio , setTipoSorteio]=useState("Mega-sena");
+
+
+return(
+    <div className="DivSorteio">
+        <select
+            name="tipoSorteio"
+            value={tipoSorteio}
+            className="tipoSorteio"
+            defaultValue={tipoSorteio}
+            onChange={(e) => setTipoSorteio(e.currentTarget.value)}
+        >
+            <option value='0' >Escolha:</option>
+            <option value='Mega-sena' >Mega-sena</option>
+            <option value='Quina' >Quina</option>
+            <option value='Lotomania' >Lotomania</option>
+            <option value='Timemania' >Timemania</option>
+            <option value='Dia de sorte' >Dia de sorte</option>
+        </select>
+    </div>
+)
 }

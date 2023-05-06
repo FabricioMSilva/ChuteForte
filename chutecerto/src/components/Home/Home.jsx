@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './style.css';
 import Img from './imagens/Sidebar.svg';
 import Logo from './imagens/Logo.svg';
+import ComboBox from "../logica/combobox";
 
 export default function Home() {
 
@@ -22,23 +23,8 @@ export default function Home() {
                 <div className='div1'>
                     <img className='Img' src={Img} alt="" />
                 
-                    <div className="DivSorteio">
-                        <select 
-                        name="tipoSorteio"
-                        value={tipoSorteio}
-                        className="tipoSorteio"
-                        defaultValue={tipoSorteio}
-                        onChange={(e)=> setTipoSorteio(e.currentTarget.value)}
-                        >
-                            <option value='0' >Escolha:</option>
-                            <option value='Mega-sena' >Mega-sena</option>
-                            <option value='Quina' >Quina</option>
-                            <option value='Lotomania' >Lotomania</option>
-                            <option value='Timemania' >Timemania</option>
-                            <option value='Dia de sorte' >Dia de sorte</option>
-                        </select>
-                    </div>
-                    
+                     <ComboBox/>
+                 
                     <div className="divLogo"><img src={Logo} alt="" /><p className="titleLogo">{tipoSorteio}</p></div>
                 </div>
 
