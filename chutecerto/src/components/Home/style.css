@@ -1,38 +1,214 @@
 .geral{
     display: flex;
-    border: green solid 3px;
+    position: relative;
+    justify-content: left;
+    width: 100vw;
     align-items: center;
+    background-color: rgb(216, 222, 223);
 }
-
-.Img-bar{
+.div1{
 display: flex;
-justify-content: center;
+justify-items: flex-start;
+align-items: flex-start;
 margin: 0;
 padding: 0;
-width:0;
+
+left: 0;
+width:30%;
 height: 100vh;
-border: rgb(179, 224, 55) solid 1px;
+
 }
+.divLogo{
+ display: flex;
+
+ position: absolute;
+ height: 100vh;
+ width: 30%;
+ justify-content:center;
+ align-items: center;
+}
+
 .Img{
-    width:max-content;
-height: 100vh;
-   
-    border: rgb(0, 4, 255) solid 1px;
+    display: flex;
+justify-items: flex-start;
+align-items: flex-start;
+   left: 0;
 padding: 0;
 }
-.fundoSorteio{
-    width: 300px;
-    height: 300px;
-background: #3b3f3c;
+.titleLogo{
+    margin: 20px;
+    
+font-size: 30px;
+font-weight: 700;
+line-height: 37px;
+letter-spacing: 0em;
+text-align: left;
+color: white;
 }
-.bola1{
+.DivSorteio{
+   
+    position: absolute;
+    width: 30%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 160px;
-    height: 160px;
-    border-radius: 52%;
-    background: #758378;
-    color: white;
-    font-size: 30pt;
 }
+.tipoSorteio{
+    width: 215.9px;
+    height: 45.2px;
+    font-family: Montserrat;
+    font-size: 15px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+position: absolute;
+border-radius: 6%;
+
+ 
+}
+.div2{
+    display: grid;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+   
+}
+.divQtdBolas{
+    display: grid;
+
+    width: 50vw;
+    height: 20vh;
+    justify-items: center;
+    align-content: center;
+}
+.txtQtdBolas{
+    font-size: 16pt;
+    color: dimgrey;
+}
+.qtdBolas{
+    display: inline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: min-content;
+    font-size: 16pt;
+    border: inset #6BEFA3 3px;
+    border-radius: 6%;
+    color: dimgrey;
+    
+
+}
+.divSorteio{
+    display: grid;
+  
+    align-content: center;
+    text-justify: distribute;
+    grid-template-columns: 200px 200px 200px 200px 200px 200px;
+}
+
+
+.bola1{
+    display: grid;
+    border: inset #6BEFA3 3px;
+    justify-content: center;
+    align-items: center;
+    margin: 45px;
+    border-radius: 52%;
+    background: white;
+    color: rgb(49, 48, 48);
+    font-size: 30pt;
+    height: 106.36px;
+width: 111.2px;
+left: 639px;
+top: 487px;
+
+}
+
+
+
+.bolas{
+    
+    display: grid;
+     grid-template-columns: 200px 200px 200px 200px 200px 200px;
+  position: inherit;
+    height: 60vh;
+    width: 60vw;
+}
+.divBtn{
+    display: grid;
+        width: 50vw;
+        height: 30vh;
+        justify-items: center;
+        align-content: center;
+}
+.container {
+
+  width: 50vw;
+    height: 20vh;
+    position: fixed;
+    left: 60%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+  }
+  
+  .btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 5px inset #ffffff;
+    outline: none;
+    transition: 1s ease-in-out;
+    border-radius: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+ .txt{
+color: #ffffff;
+text-shadow: black 1px 1px 1px ;
+font-size: 18pt;
+}
+
+  
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #5eff00;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+   
+  }
+  .txt:hover:active{
+    transition: 1s ease-in-out;
+    color: #18251e;
+}
+
+  .btn:hover {
+    transition: 1s ease-in-out;
+    background:  #6BEFA3;
+    
+  }
+  
+  .btn:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+
+  
+  
