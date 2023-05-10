@@ -143,7 +143,7 @@ const [sorteio, setsorteio] = useState();
                                 <div key={index} className="bola1">{item}</div>
                             )
                         }
-                        
+                        return null
                     })}
                 </div>
 
