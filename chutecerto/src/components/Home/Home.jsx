@@ -6,72 +6,74 @@ import Logo from './imagens/Logo.svg';
 
 export default function Home() {
 
-const [SelectJogo , setSelectJogo]= useState('');
+    const [SelectJogo, setSelectJogo] = useState('');
 
-const [sorteio, setsorteio] = useState();
+    const [sorteio, setsorteio] = useState();
 
-    const [jogoAtual , setjogoAtual] = useState(
-          { id: '',
-            nome: '' ,
-            numeroBolas: 6 ,
+    const [jogoAtual, setjogoAtual] = useState(
+        {
+            id: '',
+            nome: '',
+            numeroBolas: 6,
             cor: '',
-            nSorteio:'',
+            nSorteio: '',
             dataSorteio: '',
             mensaggem: ''
         }
-);
+    );
 
 
     const Listajogos = {
-      Mega_sena:{   
+        Mega_sena: {
             id: 1,
-            nome: 'Mega-sena' ,
-            numeroBolas: 6 ,
+            nome: 'Mega-sena',
+            numeroBolas: 6,
             cor: "#6BEFA3",
-            nSorteio:"",
+            nSorteio: "",
             dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
         },
 
-    Quina:{
+        Quina: {
             id: 2,
-            nome: 'Quina' ,
-            numeroBolas: 5 ,
+            nome: 'Quina',
+            numeroBolas: 5,
             cor: "#8666EF",
-            nSorteio:"",
-            dataSorteio: '22/08/2023' ,
+            nSorteio: "",
+            dataSorteio: '22/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
-        }  ,  
-        
-        Lotomania:{
+        },
+
+        Lotomania: {
             id: 3,
-            nome: 'Lotomania' ,
-            numeroBolas: 15 ,
+            nome: 'Lotomania',
+            numeroBolas: 15,
             cor: "#DD7AC6",
-            nSorteio:"",
-            dataSorteio: '19/08/2023' ,
+            nSorteio: "",
+            dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
-        }  ,
+        },
         Timemania: {
             id: 4,
-            nome: 'Timemania' ,
-            numeroBolas: 6 ,
+            nome: 'Timemania',
+            numeroBolas: 6,
             cor: "#FFAB64",
-            nSorteio:"",
-            dataSorteio: '19/08/2023' ,
+            nSorteio: "",
+            dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
-        },  
-        Dia_de_Sorte:{
+        },
+        Dia_de_Sorte: {
             id: 5,
-            nome: 'Dia_de_Sorte' ,
-            numeroBolas: 50 ,
+            nome: 'Dia_de_Sorte',
+            numeroBolas: 50,
             cor: "#BFAF83",
-            nSorteio:"",
-            dataSorteio: '19/08/2023' ,
+            nSorteio: "",
+            dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
-        }};
+        }
+    };
 
-    
+
 
     //gera um array de bolas e embaralha as mesmas
     const numeros = (n) => {
@@ -80,19 +82,19 @@ const [sorteio, setsorteio] = useState();
     };
 
     return (
-        //body
+        //body corpo da pagina
 
-        <div className="geral">
-            <div className='div1'>
-                <div className="Div-IMg">
+        <div className="DivAvo">
+            <div className='DivPai'>
+                <div className="DivImgFundo">
                     <svg
                         width="613"
-                        height="100vh"
+                        height="100%"
                         viewBox="0 0 613 1080"
-                        
+
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="Img">
+                        className="ImgFundo">
                         <path
                             d="M613 0C613 0 361.26 501.011 613 1080H0V0H613Z"
                             fill={jogoAtual.cor}
@@ -104,20 +106,22 @@ const [sorteio, setsorteio] = useState();
                 <div className="DivComboBox">
 
 
-                    <div className="DivSorteio">
+                    <div className="InputSelecao">
                         <select
                             name="jogo"
                             id='jogo'
                             value={SelectJogo}
-                            className="tipoSorteio"
+                            className="Selecao"
                             defaultValue={SelectJogo}
-                            onChange={(e) =>{const jogo=e.currentTarget.value
-                            setSelectJogo(jogo)
-                            setjogoAtual(Listajogos[jogo])
-                            numeros(jogoAtual.numeroBolas)
+                            onChange={(e) => {
+                                const jogo = e.currentTarget.value
+                                setSelectJogo(jogo)
+                                setjogoAtual(Listajogos[jogo])
+                                numeros(jogoAtual.numeroBolas)
+                                setsorteio(numeros(60))
                             }}
                         >
-                         
+
                             <option value='Mega_sena' >Mega-sena</option>
                             <option value='Quina' >Quina</option>
                             <option value='Lotomania' >Lotomania</option>
@@ -130,38 +134,24 @@ const [sorteio, setsorteio] = useState();
 
                 </div>
 
-                <div className="divLogo"><img src={Logo} alt="" /><p className="titleLogo">{jogoAtual.nome}</p>
+                <div className="DivLogo"><img src={Logo} alt="" /><p className="TituloLogo">{jogoAtual.nome}</p>
                 </div>
             </div>
 
-            <div className="div2">
+            <div className="Sorteio">
 
-                <div className="divSorteio">
+                <div className="SorteioBolas">
                     {sorteio?.map((item, index) => {
                         if (index < jogoAtual.numeroBolas) {
                             return (
-                                <div key={index} className="bola1">{item}</div>
+                                <div key={index} className="Bola">{item}</div>
                             )
                         }
                         return null
                     })}
                 </div>
 
-                <div className="divBtn" >
 
-                    <div className="container">
-                        <div className="center">
-                        <button className="btn" onClick={() => setsorteio(numeros(60))}>
-                                <span ><p className="txt">Sortear</p></span>
-                                <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
-                                    <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
-                                    <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
-                                </svg>
-
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
