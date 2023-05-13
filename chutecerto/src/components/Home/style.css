@@ -1,48 +1,45 @@
-.DivAvo{
+ .DivAvo{
   display: flex;
-  position: relative;
-  justify-content: left;
   width: 100vw;
-  align-items: center;
+  height: 99vh;
   background-color: rgb(255, 255, 255);
 }
 
 .DivPai{
-  display: grid;
-  justify-content: space-around;
-  align-content: space-around;
-  width: 44vw;
-  height: 100vh;
+  display: flex;
+  width: 100vw;
+  height: 99vh;
 
 }
 
 .DivImgFundo {
-  display: flex;
-
-  height: 100vh;
-  width: 30vw;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+ justify-content: center;
+ align-content: space-around;
+  height: 99vh;
+  width: 40vw;
+  margin-left: -20px;
+  padding: 0;
 
 }
 
 .ImgFundo {
-  display: flex;
-  justify-items: flex-start;
-  align-items: flex-start;
-  left: 0;
-  padding: 0;
+ 
+width: max-content;
+display: flex;
+height: 99vh;
+position: absolute;
+ 
 }
 
 .DivLogo {
   display: flex;
-
   height: 30vh;
   width: 30vw;
   position: relative;
   justify-content: center;
   align-items: center;
+ 
 }
 
 
@@ -55,42 +52,42 @@
   letter-spacing: 0em;
   text-align: left;
   color: white;
+  
 }
 
 .DivComboBox {
   display: flex;
-  height: 20vh;
+  flex-direction: column;
+  height: 100vh;
   width: 30vw;
-  position: absolute;
+position: relative;
   justify-content: center;
   align-items: center;
-
 
 }
 
-
-
 .InputSelecao {
-
-  position: absolute;
-  width: 30%;
-  height: 30%;
+  width:30vw;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+ 
+  
 }
 
 .Selecao {
   width: 215.9px;
   height: 45.2px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 18px;
   letter-spacing: 0em;
   text-align: left;
   border-radius: 6%;
   background-color: white;
-
+  text-align: center;
 
 }
 
@@ -134,7 +131,7 @@
 
 
 .divBtn {
-  border: solid black 2px;
+
   display: grid;
   width: 50vw;
   height: 30vh;
@@ -164,57 +161,128 @@
 
 @media screen and (max-width: 400px) {
 /* estilos */
-.DivAvo{ 
-  display: grid;
-  border: rgb(52, 165, 24) 1px solid;
-  width: 100vw;
-  background-color: rgb(196, 51, 51);
-  justify-content: space-around;
-  align-content: space-around;
+.DivAvo{
+
+  height: 99vh;
+  margin: 0;
+  padding: 0;
 }
 .DivPai{
+
   display: grid;
-  justify-content: space-around;
-  align-content: space-around;
-  border: rgb(206, 50, 76) 1px solid;
+  height: 98vh;
+  justify-content:center;
+  align-content:flex-start;
+  margin: 0;
+  padding: 0;
+
+}
+
+/*fundo colorido*/ 
+.DivImgFundo{
+
+  display: grid;
+
+  height:33vh;
   width: 100vw;
-  height: 20vh;
+  margin: 0;
+  padding: 0;
+}
+.ImgFundo{
+  display: flex;
+  justify-content: center;
+  align-content: start;
+  
+  width: 100vw;
+  height: 33vh;
+  margin: 0;
+  padding: 0;
+}
+.IMG{
+  height:120vw;
+  width: 100vw;
+  transform: rotate(90deg);
+  margin-top: -105px;
+  padding: 0;
+  position: fixed;
+}
+/*itens dentro do fundo*/ 
+.DivComboBox{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  
+  width: 100vw;
+  height: 34vh;
+  margin: 0;
+  padding: 0;
   position: absolute;
 }
-.DivImgFundo {
+.InputSelecao{
+  
+  width:100vw;
+  height: 5vh;
   display: flex;
-  height: 30vh;
-  width: 100vw;
-  position: absolute;
   justify-content: center;
   align-items: center;
-top:0;
-border: pink 1px solid;
+  margin-bottom: 10px;
 }
-
-
+.Selecao{
+  height: 5vh ;
+  width:50vw;
+  background-color: white;
+  text-align: center;
 }
-@media screen and (max-width: 600px) {
-/* Estilos */
-.DivAvo{
+.DivLogo{
   display: flex;
-  position: relative;
-  justify-content: left;
+  flex-direction: column;
+  height: 20vh;
   width: 100vw;
+  justify-content: start;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+}
+.Logo{
+  text-align: center;
+  height: 10vh;
+  width: 15vw;
+}
+.TituloLogo{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 20pt;
+  margin: 0;
+  height: 10vh;
+  padding: 0;
+ 
+}
+.Sorteio{
+ 
+  height: 100%;
+  width: 100vw;
+}
+.SorteioBolas{
+  display: grid;
+
+  grid-template-columns: 100px 100px 100px;
+  justify-content: center;
+  align-content: center;
+  height: max-content;
+  width: 100vw;
 }
 
-}
-@media screen and (max-width: 900px) {
-  /* Estilos */
-  .DivAvo{
-    display: flex;
-    position: relative;
-    justify-content: left;
-    width: 100vw;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-  }
+.Bola {
+  display: grid;
+  border: inset #6BEFA3 3px;
+
+  margin: 10px;
+  border-radius: 52%;
+  background: white;
+  color: rgb(49, 48, 48);
+  font-size: 30pt;
+  height: 53px;
+  width: 55px;
   
-  }
+
+}
+}

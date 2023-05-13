@@ -12,13 +12,13 @@ export default function Home() {
 
     const [jogoAtual, setjogoAtual] = useState(
         {
-            id: '',
-            nome: '',
+            id: 1,
+            nome: 'Mega-sena',
             numeroBolas: 6,
-            cor: '',
-            nSorteio: '',
-            dataSorteio: '',
-            mensaggem: ''
+            cor: "#6BEFA3",
+            nSorteio: "",
+            dataSorteio: '19/08/2023',
+            mensaggem: 'Este simulador é somente para teste de codigo'
         }
     );
 
@@ -65,7 +65,7 @@ export default function Home() {
         Dia_de_Sorte: {
             id: 5,
             nome: 'Dia_de_Sorte',
-            numeroBolas: 50,
+            numeroBolas: 5,
             cor: "#BFAF83",
             nSorteio: "",
             dataSorteio: '19/08/2023',
@@ -87,75 +87,77 @@ export default function Home() {
         <div className="DivAvo">
             <div className='DivPai'>
                 <div className="DivImgFundo">
-                    <svg
-                        width="613"
-                        height="100%"
-                        viewBox="0 0 613 1080"
+                    <div className="ImgFundo">
+                        <svg
+                            width="613"
+                            height="100%"
+                            viewBox="0 0 613 1080"
 
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="ImgFundo">
-                        <path
-                            d="M613 0C613 0 361.26 501.011 613 1080H0V0H613Z"
-                            fill={jogoAtual.cor}
-                        />
-                    </svg>
-
-                </div>
-
-                <div className="DivComboBox">
-
-
-                    <div className="InputSelecao">
-                        <select
-                            name="jogo"
-                            id='jogo'
-                            value={SelectJogo}
-                            className="Selecao"
-                            defaultValue={SelectJogo}
-                            onChange={(e) => {
-                                const jogo = e.currentTarget.value
-                                setSelectJogo(jogo)
-                                setjogoAtual(Listajogos[jogo])
-                                numeros(jogoAtual.numeroBolas)
-                                setsorteio(numeros(60))
-                            }}
-                        >
-
-                            <option value='Mega_sena' >Mega-sena</option>
-                            <option value='Quina' >Quina</option>
-                            <option value='Lotomania' >Lotomania</option>
-                            <option value='Timemania' >Timemania</option>
-                            <option value='Dia_de_Sorte' >Dia de Sorte</option>
-                        </select>
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="IMG">
+                            <path
+                                d="M613 0C613 0 361.26 501.011 613 1080H0V0H613Z"
+                                fill={jogoAtual.cor}
+                            />
+                        </svg>
                     </div>
 
+                    <div className="DivComboBox">
 
+
+                        <div className="InputSelecao">
+                            <select
+                                name="jogo"
+                                id='jogo'
+                                value={SelectJogo}
+                                className="Selecao"
+                                defaultValue={SelectJogo}
+                                onChange={(e) => {
+                                    const jogo = e.currentTarget.value
+                                    setSelectJogo(jogo)
+                                    setjogoAtual(Listajogos[jogo])
+                                    numeros(jogoAtual.numeroBolas)
+                                    setsorteio(numeros(60))
+                                }}
+                            >
+
+                                <option value='Mega_sena' >Mega-sena</option>
+                                <option value='Quina' >Quina</option>
+                                <option value='Lotomania' >Lotomania</option>
+                                <option value='Timemania' >Timemania</option>
+                                <option value='Dia_de_Sorte' >Dia de Sorte</option>
+                            </select>
+                        </div>
+
+
+                        <div className="DivLogo">
+                            <img src={Logo} className="Logo" alt="" /><p className="TituloLogo">{jogoAtual.nome}</p>
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div className="DivLogo"><img src={Logo} alt="" /><p className="TituloLogo">{jogoAtual.nome}</p>
+
+
+
+                <div className="Sorteio">
+
+                    <div className="SorteioBolas">
+                        {sorteio?.map((item, index) => {
+                            if (index < jogoAtual.numeroBolas) {
+                                return (
+                                    <div key={index} className="Bola">{item}</div>
+                                )
+                            }
+                            return null
+                        })}
+                    </div>
                 </div>
             </div>
 
-            <div className="Sorteio">
-
-                <div className="SorteioBolas">
-                    {sorteio?.map((item, index) => {
-                        if (index < jogoAtual.numeroBolas) {
-                            return (
-                                <div key={index} className="Bola">{item}</div>
-                            )
-                        }
-                        return null
-                    })}
-                </div>
-
-
-            </div>
-
-
-        </div>
+        </div >
     );
 
 }
