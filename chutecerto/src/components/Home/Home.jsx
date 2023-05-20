@@ -29,7 +29,7 @@ export default function Home() {
             nome: 'Mega-sena',
             numeroBolas: 6,
             cor: "#6BEFA3",
-            nSorteio: "",
+            nSorteio: "3435",
             dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
         },
@@ -39,7 +39,7 @@ export default function Home() {
             nome: 'Quina',
             numeroBolas: 5,
             cor: "#8666EF",
-            nSorteio: "",
+            nSorteio: "3456",
             dataSorteio: '22/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
         },
@@ -49,7 +49,7 @@ export default function Home() {
             nome: 'Lotomania',
             numeroBolas: 15,
             cor: "#DD7AC6",
-            nSorteio: "",
+            nSorteio: "32554",
             dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
         },
@@ -58,7 +58,7 @@ export default function Home() {
             nome: 'Timemania',
             numeroBolas: 6,
             cor: "#FFAB64",
-            nSorteio: "",
+            nSorteio: "3256",
             dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
         },
@@ -67,7 +67,7 @@ export default function Home() {
             nome: 'Dia_de_Sorte',
             numeroBolas: 5,
             cor: "#BFAF83",
-            nSorteio: "",
+            nSorteio: "4227",
             dataSorteio: '19/08/2023',
             mensaggem: 'Este simulador é somente para teste de codigo'
         }
@@ -89,8 +89,7 @@ export default function Home() {
                 <div className="DivImgFundo">
                     <div className="ImgFundo">
                         <svg
-                            width="613"
-                            height="100%"
+
                             viewBox="0 0 613 1080"
 
                             fill="none"
@@ -119,6 +118,7 @@ export default function Home() {
                                     setjogoAtual(Listajogos[jogo])
                                     numeros(jogoAtual.numeroBolas)
                                     setsorteio(numeros(60))
+
                                 }}
                             >
 
@@ -134,7 +134,9 @@ export default function Home() {
                         <div className="DivLogo">
                             <img src={Logo} className="Logo" alt="" /><p className="TituloLogo">{jogoAtual.nome}</p>
                         </div>
-
+                        <div className="InfoConcurso">
+                            <p className="Infotexto">CONCURSO N°{jogoAtual.nSorteio}</p>
+                        </div>
                     </div>
 
                 </div>
@@ -148,12 +150,17 @@ export default function Home() {
                         {sorteio?.map((item, index) => {
                             if (index < jogoAtual.numeroBolas) {
                                 return (
-                                    <div key={index} className="Bola">{item}</div>
+                                    <div key={index}
+                                        className="Bola"
+                                    >{item}</div>
                                 )
                             }
                             return null
                         })}
                     </div>
+                </div>
+                <div className="informativo">
+                    <p className="txtInformativo">Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
                 </div>
             </div>
 
