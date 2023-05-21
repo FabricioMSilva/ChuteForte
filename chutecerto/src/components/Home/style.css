@@ -267,7 +267,7 @@ position: relative;
   flex-direction: column;
   height: 20vh;
   width: 100vw;
-
+  justify-content: flex-start;
   align-items: center;
 }
 .Logo{
