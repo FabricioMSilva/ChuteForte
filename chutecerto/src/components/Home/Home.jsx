@@ -135,7 +135,7 @@ export default function Home() {
                             <img src={Logo} className="Logo" alt="" /><p className="TituloLogo">{jogoAtual.nome}</p>
                         </div>
                         <div className="InfoConcurso">
-                            <p className="Infotexto">CONCURSO N°{jogoAtual.nSorteio}</p>
+                            <p className="Infotexto">CONCURSO N°{jogoAtual.nSorteio} - {jogoAtual.dataSorteio}</p>
                         </div>
                     </div>
 

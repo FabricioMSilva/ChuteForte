@@ -171,8 +171,19 @@ position: relative;
   font-size: 14px;
   color: white;
 }
+.informativo{
+  width: 100vw;
 
-@media screen and (max-width: 400px) {
+  position: fixed;
+  bottom: 0;
+  background-color:transparent;
+
+}.txtInformativo{
+  font-size: 14px;
+  color: black;
+ 
+}
+@media screen and (max-width: 900px) {
 /* estilos */
 .DivAvo{
 
