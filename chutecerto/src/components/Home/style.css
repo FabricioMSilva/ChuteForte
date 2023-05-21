@@ -17,7 +17,7 @@
  justify-content: center;
  align-content: space-around;
   height: 99vh;
-  width: 40vw;
+  width: 30vw;
   margin-left: -20px;
   padding: 0;
 
@@ -25,9 +25,9 @@
 
 .ImgFundo {
  
-width: 701px;
+width: 450px;
 display: flex;
-height: 99vh;
+
 position: absolute;
  
 }
@@ -107,7 +107,7 @@ position: relative;
 
   align-content: center;
   text-justify: distribute;
-  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
 }
 
 
